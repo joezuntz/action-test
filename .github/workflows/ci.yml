@@ -1,0 +1,17 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+  Unit_Tests:
+    runs-on: macos-14
+
+    steps:
+
+    - name: PDFLatex
+      run: |
+        brew update-reset && brew install --cask basictex
+        pdflatex --version
